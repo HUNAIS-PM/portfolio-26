@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   createBrowserRouter,
@@ -58,6 +57,7 @@ const router = createBrowserRouter(
       <Route path="/poster" element={<Poster />} />
       <Route path="/menucard" element={<MenuCard />} />
       <Route path="/menucard2" element={<MenuCard2 />} />
+      <Route path="*" element={<Home />} />
     </Route>
   )
 );

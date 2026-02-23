@@ -1,5 +1,5 @@
 import ExperienceCard from "./ExperienceCard";
-import Title from "./Title";
+import Title from "../components/ui/Title";
 import { MdWork } from "react-icons/md";
 import { SiReactivex, SiFreelancer, SiFiverr, SiToptal } from "react-icons/si";
 

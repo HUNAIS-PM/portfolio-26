@@ -1,6 +1,6 @@
 import React from "react";
-import SkillsInput from "./SkillsInput";
-import Title from "./Title";
+import SkillsInput from "../components/ui/SkillsInput";
+import Title from "../components/ui/Title";
 import { GiSkills } from "react-icons/gi";
 import {
   SiAdobephotoshop,
