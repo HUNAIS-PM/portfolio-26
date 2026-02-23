@@ -47,19 +47,17 @@ const Layout = () => {
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/hire-me" element={<Contact />} />
-        <Route path="/works" element={<Projects />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/poster" element={<Poster />} />
-        <Route path="/menucard" element={<MenuCard />} />
-        <Route path="/menucard2" element={<MenuCard2 />} />
-      </Route>
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/hire-me" element={<Contact />} />
+      <Route path="/works" element={<Projects />} />
+      <Route path="/skills" element={<Skills />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/resume" element={<Resume />} />
+      <Route path="/poster" element={<Poster />} />
+      <Route path="/menucard" element={<MenuCard />} />
+      <Route path="/menucard2" element={<MenuCard2 />} />
     </Route>
   )
 );
