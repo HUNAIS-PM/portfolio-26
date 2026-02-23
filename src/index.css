@@ -1,0 +1,376 @@
+@import url("./styles/typography.css");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .hoverEffect {
+    @apply duration-300 cursor-pointer;
+  }
+
+  .headerSedenavLi {
+    @apply hover:underline underline-offset-2 cursor-pointer text-gray-300 hover:text-white;
+  }
+}
+
+/* ============= NavLink active Start here ============== */
+nav .active li {
+  color: black;
+  font-weight: 600;
+  text-decoration: 1px underline black;
+}
+
+@media screen and (max-width: 665px) {
+  nav .active li {
+    color: white;
+    font-weight: 600;
+    text-decoration: 1px underline white;
+  }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ============= NavLink active End here ================ */
+
+.slide-loop {
+  animation: slideVertical 3s ease-in-out infinite;
+}
+
+@keyframes slideVertical {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Ensure body and html are transparent for background effects */
+html,
+body,
+#root {
+  background-color: transparent;
+}
+
+/* Custom Hero CTA Button Styles */
+.hero-cta-button {
+  --border-color: black;
+  --border-width: 0.125em;
+  --curve-size: 0.5em;
+  --blur: 30px;
+  --bg: #080312;
+  --color: #afffff;
+  /* This will be the default text color */
+  color: var(--color);
+  cursor: pointer;
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  place-content: center;
+  padding: 0.5em 1.5em;
+  font-size: 17px;
+  border: 0;
+  text-transform: uppercase;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+  clip-path: polygon(
+      /* Top-left */
+      0% var(--curve-size),
+      var(--curve-size) 0,
+      /* top-right */
+      100% 0,
+      100% calc(100% - var(--curve-size)),
+      /* bottom-right 1 */
+      calc(100% - var(--curve-size)) 100%,
+      /* bottom-right 2 */
+      0 100%);
+  transition: color 250ms;
+  height: 50px;
+  /* Keep the height from previous request */
+  line-height: 14px;
+  /* Keep line-height from previous request */
+  letter-spacing: 1.2px;
+  /* Keep letter-spacing from previous request */
+}
+
+.hero-cta-button::after,
+.hero-cta-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.hero-cta-button::before {
+  background: var(--border-color);
+  background-size: 300% 300%;
+  animation: move-bg7234 5s ease infinite;
+  z-index: -2;
+}
+
+@keyframes move-bg7234 {
+  0% {
+    background-position: 31% 0%;
+  }
+
+  50% {
+    background-position: 70% 100%;
+  }
+
+  100% {
+    background-position: 31% 0%;
+  }
+}
+
+.hero-cta-button::after {
+  background: var(--bg);
+  z-index: -1;
+  clip-path: polygon(
+      /* Top-left */
+      var(--border-width) calc(var(--curve-size) + var(--border-width) * 0.5),
+      calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+      /* top-right */
+      calc(100% - var(--border-width)) var(--border-width),
+      calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+      /* bottom-right 1 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+      /* bottom-right 2 */
+      var(--border-width) calc(100% - var(--border-width)));
+  transition: clip-path 500ms;
+}
+
+.hero-cta-button:where(:hover, :focus)::after {
+  clip-path: polygon(
+      /* Top-left */
+      calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+      calc(100% - var(--border-width)) var(--border-width),
+      /* top-right */
+      calc(100% - var(--border-width)) var(--border-width),
+      calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+      /* bottom-right 1 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+      /* bottom-right 2 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)));
+  transition: 200ms;
+}
+
+.hero-cta-button:where(:hover, :focus) {
+  color: #fff;
+}
+
+
+
+/* 3D Cube Background Styles */
+.cube-container {
+  width: 100vw;
+  height: 100vh;
+  perspective: 600px;
+  /* Further decreased perspective */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cube {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: rotate 8s infinite linear, moveCube 15s infinite ease-in-out;
+  /* Combined animations */
+}
+
+.face {
+  position: absolute;
+  width: 200px;
+  /* Further decreased size of the cube faces */
+  height: 200px;
+  color: rgb(214, 21, 21);
+  font-size: 18px;
+  text-align: center;
+  line-height: 200px;
+  /* Adjusted line-height for new face height */
+  background: transparent;
+  opacity: 0.9;
+  border: 2px solid;
+  border-image: linear-gradient(to right, #ff6b6b, #355c7d, #557d35, #cfcf16, #a51f1f) 1;
+  box-shadow: 0 0 100px rgba(245, 8, 8, 0.8);
+}
+
+
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@keyframes moveCube {
+  0% {
+    transform: translate(-10%, -10%) rotateX(0) rotateY(0) rotateZ(0);
+  }
+
+  25% {
+    transform: translate(10%, 10%) rotateX(90deg) rotateY(90deg) rotateZ(90deg);
+  }
+
+  50% {
+    transform: translate(-15%, 5%) rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+  }
+
+  75% {
+    transform: translate(5%, -15%) rotateX(270deg) rotateY(270deg) rotateZ(270deg);
+  }
+
+  100% {
+    transform: translate(-10%, -10%) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+
+/* 3D Cube Background Styles */
+.cube-container {
+  width: 100vw;
+  height: 100vh;
+  perspective: 600px;
+  /* Further decreased perspective */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cube {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: rotate 8s infinite linear, moveCube 15s infinite ease-in-out;
+  /* Combined animations */
+}
+
+.face {
+  position: absolute;
+  width: 200px;
+  /* Further decreased size of the cube faces */
+  height: 200px;
+  color: rgb(214, 21, 21);
+  font-size: 18px;
+  text-align: center;
+  line-height: 200px;
+  /* Adjusted line-height for new face height */
+  background: transparent;
+  opacity: 0.9;
+  border: 2px solid;
+  border-image: linear-gradient(to right, #ff6b6b, #355c7d, #557d35, #cfcf16, #a51f1f) 1;
+  box-shadow: 0 0 100px rgba(245, 8, 8, 0.8);
+}
+
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@keyframes moveCube {
+  0% {
+    transform: translate(-10%, -10%) rotateX(0) rotateY(0) rotateZ(0);
+  }
+
+  25% {
+    transform: translate(10%, 10%) rotateX(90deg) rotateY(90deg) rotateZ(90deg);
+  }
+
+  50% {
+    transform: translate(-15%, 5%) rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+  }
+
+  75% {
+    transform: translate(5%, -15%) rotateX(270deg) rotateY(270deg) rotateZ(270deg);
+  }
+
+  100% {
+    transform: translate(-10%, -10%) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+.hero-background {
+  --border-color: black;
+  --border-width: 0.125em;
+  --curve-size: 0.5em;
+  --bg: transparent;
+  /* Transparent background for the card */
+  position: absolute;
+  /* Position it behind the text */
+  isolation: isolate;
+  clip-path: polygon(
+      /* Top-left */
+      0% var(--curve-size),
+      var(--curve-size) 0,
+      /* top-right */
+      100% 0,
+      100% calc(100% - var(--curve-size)),
+      /* bottom-right 1 */
+      calc(100% - var(--curve-size)) 100%,
+      /* bottom-right 2 */
+      0 100%);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+  z-index: -1;
+  /* Place it behind the text but above other background elements */
+  background: var(--bg);
+  /* Set transparent background */
+}
+
+.hero-card-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--border-color);
+  z-index: -1;
+  /* Clip-path for border effect */
+  clip-path: polygon(
+      /* Top-left */
+      var(--border-width) calc(var(--curve-size) + var(--border-width) * 0.5),
+      calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+      /* top-right */
+      calc(100% - var(--border-width)) var(--border-width),
+      calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+      /* bottom-right 1 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+      /* bottom-right 2 */
+      var(--border-width) calc(100% - var(--border-width)));
+}
+
+
+/* Protection classes */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  pointer-events: auto;
+  /* Allow clicks, but no drag */
+}
