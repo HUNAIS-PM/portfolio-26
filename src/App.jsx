@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -23,7 +23,7 @@ import MenuCard from "./pages/MenuCard";
 import MenuCard2 from "./pages/MenuCard2";
 
 const Layout = () => {
-  React.useEffect(() => {
+  useEffect(() => {
     const handleContextMenu = (e) => {
       e.preventDefault();
     };

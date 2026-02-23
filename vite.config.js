@@ -6,13 +6,11 @@ import { fileURLToPath } from 'url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/',
   resolve: {
     alias: {
-      '@src': path.resolve(__dirname, './src'),
+      '@': path.resolve(__dirname, './src'),
     },
   },
   define: {
@@ -23,5 +21,6 @@ export default defineConfig({
     assetsDir: 'assets',
     sourcemap: false,
     minify: 'esbuild',
+    chunkSizeWarningLimit: 2000,
   }
 })
