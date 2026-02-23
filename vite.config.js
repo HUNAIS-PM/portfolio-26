@@ -21,6 +21,14 @@ export default defineConfig({
     assetsDir: 'assets',
     sourcemap: false,
     minify: 'esbuild',
-    chunkSizeWarningLimit: 2000,
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          reactVendor: ["react", "react-dom"],
+          router: ["react-router-dom"],
+        },
+      },
+    },
   }
 })

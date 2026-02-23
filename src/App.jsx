@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from "react";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -7,20 +7,22 @@ import {
   Route,
   ScrollRestoration,
 } from "react-router-dom";
+
 import Footer from "./components/layouts/Footer/Footer";
 import FooterBottom from "./components/layouts/Footer/FooterBottom";
 import Header from "./components/layouts/Header/Header";
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Projects from "./pages/Projects";
-import Services from "./pages/Services";
-import Skills from "./pages/Skills";
-import Resume from "./pages/Resume";
-import Poster from "./pages/Poster";
-import MenuCard from "./pages/MenuCard";
-import MenuCard2 from "./pages/MenuCard2";
+// 🔥 Lazy Loaded Pages (Code Splitting)
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Projects = lazy(() => import("./pages/Projects"));
+const Services = lazy(() => import("./pages/Services"));
+const Skills = lazy(() => import("./pages/Skills"));
+const Resume = lazy(() => import("./pages/Resume"));
+const Poster = lazy(() => import("./pages/Poster"));
+const MenuCard = lazy(() => import("./pages/MenuCard"));
+const MenuCard2 = lazy(() => import("./pages/MenuCard2"));
 
 const Layout = () => {
   useEffect(() => {
@@ -37,7 +39,9 @@ const Layout = () => {
     <div className="font-bodyFont no-select">
       <Header />
       <ScrollRestoration />
-      <Outlet />
+      <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
+        <Outlet />
+      </Suspense>
       <Footer />
       <FooterBottom />
     </div>
@@ -63,9 +67,7 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  return (
-    <RouterProvider router={router} />
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
