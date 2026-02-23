@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { ReactLenis, useLenis } from 'lenis/react';
+// import { ReactLenis, useLenis } from 'lenis/react';
 // import HeroSection from "../../components/home/HeroSection"; // Excluded as per request
 import Developersection from "../components/layouts/Developersection";
 import WorkOneSection from "../components/layouts/WorkOneSection";
@@ -17,17 +17,17 @@ import Designsection from "../components/layouts/Designsection";
 
 
 const HomeContent = () => {
-  const lenis = useLenis();
+  // const lenis = useLenis();
 
-  useEffect(() => {
-    if (lenis) {
-      const raf = (time) => {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      };
-      requestAnimationFrame(raf);
-    }
-  }, [lenis]);
+  // useEffect(() => {
+  //   if (lenis) {
+  //     const raf = (time) => {
+  //       lenis.raf(time);
+  //       requestAnimationFrame(raf);
+  //     };
+  //     requestAnimationFrame(raf);
+  //   }
+  // }, [lenis]);
 
   return (
     <>
@@ -51,9 +51,9 @@ const HomeContent = () => {
 
 const Home = () => {
   return (
-    <ReactLenis root>
+    // <ReactLenis root>
       <HomeContent />
-    </ReactLenis>
+    // </ReactLenis>
   );
 };
 

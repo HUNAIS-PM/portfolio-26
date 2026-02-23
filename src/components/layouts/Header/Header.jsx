@@ -5,9 +5,9 @@ import { FaHome } from "react-icons/fa";
 import { HiMenuAlt2, HiOutlineDocumentText } from "react-icons/hi";
 import { motion } from "framer-motion";
 import Flex from "../Flex";
-import { navBarList, bottomNavLinks, hamburgerLinks } from "@src/constants/index";
+import { navBarList, bottomNavLinks, hamburgerLinks } from "../../../constants/index";
 
-const logoLight = process.env.PUBLIC_URL + "/smallLogo.ico";
+const logoLight = "/smallLogo.ico";
 
 const Header = () => {
   const [sidenav, setSidenav] = useState(false);
