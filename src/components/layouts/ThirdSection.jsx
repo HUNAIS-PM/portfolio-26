@@ -8,7 +8,7 @@ const ThirdSection = () => {
         <div className="sm:sticky sm:top-0  w-full ">
           <figure className="w-full h-screen flex items-center justify-center ">
             <img
-              src={process.env.PUBLIC_URL + '/img/birds/bird-7396278_1920.jpg'}
+              src={'/img/birds/bird-7396278_1920.jpg'}
               alt="Bird"
               className="transition-all duration-300 h-full w-full align-bottom object-cover "
             />
@@ -17,7 +17,7 @@ const ThirdSection = () => {
         <div className="sm:sticky sm:top-2  w-full ">
           <figure className="w-full h-screen flex items-center justify-center ">
             <img
-              src={process.env.PUBLIC_URL + '/img/birds/blue-tit-6908151_1920.jpg'}
+              src={'/img/birds/blue-tit-6908151_1920.jpg'}
               alt="Blue tit bird"
               className="transition-all duration-300 h-full w-full align-bottom object-cover [box-shadow:0_-5px_16px_4px_rgba(0,0,0,0.8),0_2px_4px_-1px_rgba(0,0,0,0.06)]"
             />
@@ -26,7 +26,7 @@ const ThirdSection = () => {
         <div className="sm:sticky sm:top-4  w-full ">
           <figure className="w-full h-screen flex items-center justify-center ">
             <img
-              src={process.env.PUBLIC_URL + '/img/birds/blue-tit-7965696_1920.jpg'}
+              src={'/img/birds/blue-tit-7965696_1920.jpg'}
               alt="Blue tit bird looking left"
               className="transition-all duration-300 h-full w-full align-bottom object-cover "
             />
@@ -35,7 +35,7 @@ const ThirdSection = () => {
         <div className="sm:sticky sm:top-6  w-full ">
           <figure className="w-full h-screen flex items-center justify-center ">
             <img
-              src={process.env.PUBLIC_URL + '/img/leaf/autumn-3680684_1920.jpg'}
+              src={'/img/leaf/autumn-3680684_1920.jpg'}
               alt="Autumn leaf"
               className="transition-all duration-300 h-full w-full  align-bottom object-cover "
             />
@@ -44,7 +44,7 @@ const ThirdSection = () => {
         <div className="sm:sticky sm:top-8  w-full ">
           <figure className="w-full h-screen flex items-center justify-center ">
             <img
-              src={process.env.PUBLIC_URL + '/img/leaf/autumn-5709408_1920.jpg'}
+              src={'/img/leaf/autumn-5709408_1920.jpg'}
               alt="Autumn leaf"
               className="transition-all duration-300 h-full w-full  align-bottom object-cover "
             />
@@ -53,7 +53,7 @@ const ThirdSection = () => {
         <div className="sm:sticky sm:top-12  w-full ">
           <figure className="w-full h-screen flex items-center justify-center ">
             <img
-              src={process.env.PUBLIC_URL + '/img/leaf/maple-6678635_1920.jpg'}
+              src={'/img/leaf/maple-6678635_1920.jpg'}
               alt="Maple leaf"
               className="transition-all duration-300 h-full w-full  align-bottom object-cover "
             />
