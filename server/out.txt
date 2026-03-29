@@ -1,0 +1,6 @@
+---TXT---
+authSource=admin&replicaSet=atlas-11wrfy-shard-0
+---SRV---
+ac-ccc161g-shard-00-01.6ru6icm.mongodb.net
+ac-ccc161g-shard-00-00.6ru6icm.mongodb.net
+ac-ccc161g-shard-00-02.6ru6icm.mongodb.net

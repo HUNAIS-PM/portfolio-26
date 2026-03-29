@@ -1,0 +1,145 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #ffffff;
+  
+}
+
+.resume-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.page {
+  width: 794px; /* A4 width at 96dpi */
+  min-height: 1123px; /* A4 height at 96dpi */
+  margin: 20px auto;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: 1px solid #ffffff;
+  page-break-inside: avoid;
+}
+
+.resume {
+  display: grid;
+  grid-template-columns: 38% 62%;
+  page-break-inside: avoid;
+}
+
+.full-page.resume {
+  display: block;
+  grid-template-columns: none;
+}
+
+/* LEFT */
+.left {
+  background: #f2f4f4;
+  padding: 30px;
+}
+
+.photo {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-image: url('/img/profile.png');
+  background-size: cover;
+  background-position: top;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.left h3 {
+  margin: 20px 0 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #000;
+  font-weight: bold;
+  page-break-after: avoid;
+}
+
+.left p, .left li {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.left ul {
+  padding-left: 15px;
+}
+
+/* RIGHT */
+.right {
+  padding: 40px;
+  color: #000;
+}
+
+header {
+  border-bottom: 4px solid #5f7c7c;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+header h1 {
+  font-size: 34px;
+  letter-spacing: 2px;
+  color: #000;
+}
+
+header span {
+  color: #5f7c7c;
+  font-weight: 600;
+}
+
+.right h3 {
+  margin: 20px 0 10px;
+  text-transform: uppercase;
+  font-size: 15px;
+  color: #000;
+  font-weight: bold;
+}
+
+.right p, .right li {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.job {
+  margin-bottom: 15px;
+  page-break-inside: avoid;
+}
+
+.job h4 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: normal;
+  color: #000;
+}
+
+.refs {
+  display: flex;
+  gap: 40px;
+  font-size: 13px;
+}
+
+.page-break {
+  page-break-before: always;
+}
+
+section {
+  page-break-inside: avoid;
+}

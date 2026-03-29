@@ -1,0 +1,36 @@
+.first-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 10%;
+  padding-bottom: 10rem; /* Added padding to the bottom */
+  background: #f9f9f9;
+}
+
+@media (max-width: 768px) {
+  .first-section {
+    flex-direction: column;
+    padding: 2rem 5%;
+    text-align: center;
+  }
+
+  .first-section .profile { /* Corrected selector */
+    margin-bottom: 2rem;
+  }
+}
+.role-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-top: 12px;
+  overflow: hidden;
+  padding: 0.5rem 0; /* Reduced vertical padding */
+}
+
+.role-wrapper p {
+  margin-top: -0.5rem; /* Decrease space between lines */
+}
+
+
+.hero-cta-button {
+  margin-top: 2rem;
+}
